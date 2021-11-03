@@ -18,8 +18,7 @@ with open("out.ucidata-zachary", 'r') as f:
         map(lambda x: (int(x[0]), int(x[1])), pure_edges)
     )
     vertices = max([
-        max([x[0] for x in pure_edges_int]),
-         max([x[1] for x in pure_edges_int])
+        max(x[0],x[1]) for x in pure_edges_int
     ])
     edges = [(x[0] - 1, x[1] - 1) for x in pure_edges_int]
 
